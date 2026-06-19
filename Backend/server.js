@@ -7,7 +7,6 @@ import enquiryRoute from "./routes/enquiryRoute.js";
 dotenv.config();
 
 const app = express();
-const port = 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -27,7 +26,7 @@ const connectDB = async () => {
 
 app.use("/api", enquiryRoute);
 
-app.listen(port, () => {
-  console.log(`Server running on port : ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server running`);
   connectDB();
 });
