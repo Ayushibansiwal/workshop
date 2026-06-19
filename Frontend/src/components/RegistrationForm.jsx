@@ -16,7 +16,7 @@ function RegistrationForm() {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8000/api/enquiry", data);
+      const res = await axios.post(`${backendUrl}/api/enquiry`, data);
       toast.success(res.data.message || "Registration Successful");
       reset();
     } catch (error) {
